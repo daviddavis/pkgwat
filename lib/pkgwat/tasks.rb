@@ -1,4 +1,4 @@
-require 'ruby-debug'
+require 'rake'
 require 'pkgwat'
 
 namespace :pkgwat do

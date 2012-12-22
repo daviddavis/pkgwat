@@ -20,7 +20,11 @@ Gem::Specification.new do |s|
   s.add_dependency("thor")
   s.add_dependency("json", "1.6.5")
 
-  s.add_development_dependency("ruby-debug")
+  if RUBY_VERSION >= "1.9"
+    s.add_development_dependency("debugger")
+  else
+    s.add_development_dependency("ruby-debug")
+  end
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

@@ -23,7 +23,7 @@ module Pkgwat
       match = compare_versions(version, dv["stable_version"])
       matches << dv["release"] if match
     end
-    puts "Its available in the following distros: #{matches.join(",")}"
+    puts "#{name} is available in the following distros: #{matches.join(",")}"
   end
 
   def self.compare_versions(version, distro)
