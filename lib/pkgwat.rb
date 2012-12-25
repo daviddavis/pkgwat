@@ -43,7 +43,7 @@ module Pkgwat
   end
 
   def self.total_rows(pattern)
-    JSON.parse(get_packages_paginated(pattern, 10, 0).body)["total_rows"]
+    JSON.parse(get_package(pattern, 10, 0).body)["total_rows"]
   end
   
   #this function queries and returns the specified number of packages starting at the specified row
@@ -55,7 +55,8 @@ module Pkgwat
     url = PACKAGES_URL_LIST + "/" + query.to_json
     uri = URI.parse(URI.escape(url)) 
     response = submit_request(uri)
-    parse_results(response.body)    
+    clean_response = Sanitize.clean(response.body)
+    parse_results(clean_response)    
   end 
  
   #this function just queries for and returns a single package  
