@@ -1,7 +1,7 @@
 require "pkgwat/version"
 require 'net/https'
 require 'json'
-require 'Sanitize'
+require 'sanitize'
 
 module Pkgwat
   require 'pkgwat/railtie' if defined?(Rails)
@@ -44,7 +44,11 @@ module Pkgwat
   end
 
   def self.total_rows(pattern)
-    JSON.parse(get_package(pattern, 10, 0).body)["total_rows"]
+    query = {"filters"=>{"search"=>pattern}, "rows_per_page"=>10, "start_row"=>0}
+    url = PACKAGES_URL_LIST + "/" + query.to_json
+    uri = URI.parse(URI.escape(url)) 
+    response = submit_request(uri)
+    JSON.parse(response.body)["total_rows"]
   end
   
   #this function queries and returns the specified number of packages starting at the specified row
