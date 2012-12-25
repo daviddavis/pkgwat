@@ -1,6 +1,7 @@
 require "pkgwat/version"
 require 'net/https'
 require 'json'
+require 'Sanitize'
 
 module Pkgwat
   require 'pkgwat/railtie' if defined?(Rails)
