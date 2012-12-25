@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency("rake")
   s.add_dependency("thor")
   s.add_dependency("json", "1.6.5")
+  s.add_dependency("sanitize")
 
   if RUBY_VERSION >= "1.9"
     s.add_development_dependency("debugger")

@@ -13,6 +13,7 @@ module Pkgwat
   DEFAULT_DISTROS = [F17, F16, EPEL6]
   PACKAGE_NAME = "rubygem-:gem"
   PACKAGES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases"
+  PACKAGES_URL_LIST = "https://apps.fedoraproject.org/packages/fcomm_connector/xapian/query/search_packages"
 
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
     puts "Checking #{name} #{version}...\n"
@@ -41,6 +42,32 @@ module Pkgwat
     PACKAGE_NAME.gsub(":gem", gem)
   end
 
+  def self.total_rows(pattern)
+    query = {"filters"=>{"search"=>pattern}, "rows_per_page"=>10, "start_row"=>0}
+    url = PACKAGES_URL_LIST + "/" + query.to_json
+    uri = URI.parse(URI.escape(url)) 
+    response = submit_request(uri)
+    JSON.parse(response.body)["total_rows"]
+  end
+  
+  #this function queries and returns the specified number of packages starting at the specified row
+  def self.get_packages(pattern, start=0, num=nil) 
+    if num == nil
+      num = total_rows(pattern)
+    end
+    query = {"filters"=>{"search"=>pattern}, "rows_per_page"=>num, "start_row"=>start}
+    url = PACKAGES_URL_LIST + "/" + query.to_json
+    uri = URI.parse(URI.escape(url)) 
+    response = submit_request(uri)
+    clean_response = Sanitize.clean(response.body)
+    parse_results(clean_response)    
+  end 
+ 
+  #this function just queries for and returns a single package  
+  def self.get_package(pattern)
+    get_packages(pattern, 0, 1).first
+  end 
+  
   def self.search_params(gem)
     filters = { :package => package_name(gem) }
     { :filters => filters }
