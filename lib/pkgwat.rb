@@ -15,6 +15,8 @@ module Pkgwat
   PACKAGE_NAME = "rubygem-:gem"
   PACKAGES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases"
   PACKAGES_URL_LIST = "https://apps.fedoraproject.org/packages/fcomm_connector/xapian/query/search_packages"
+  PACKAGES_URL_BUGS = "https://apps.fedoraproject.org/packages/fcomm_connector/bugzilla/query/query_bugs"                       
+  BUGZILLA_RELEASEA = ["all" => "", "f17" =>"17", "f16" => "16", "f15" => "15", "e16" => "16", "e15" => "15"]
 
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
     puts "Checking #{name} #{version}...\n"
@@ -68,6 +70,20 @@ module Pkgwat
   def self.get_package(pattern)
     get_packages(pattern, 0, 1).first
   end 
+
+  #this function queries for and returns a list of then open bugs  
+  def self.get_bugs(pattern, version='all', rows_per_page=10, start_row =0)
+    if BUGZILLA_RELEASEA[0][version].nil?
+      version = BUGZILLA_RELEASEA[0]['all']
+    else
+      version = BUGZILLA_RELEASEA[0][version]
+    end   
+    query = {"filters"=> {"package"=> pattern, "version"=> version}, "rows_per_page"=> 10, "start_row"=> 0}
+    url = PACKAGES_URL_BUGS + "/" + query.to_json
+    uri = URI.parse(URI.escape(url)) 
+    response = submit_request(uri)
+    parse_results(response.body)  
+  end
   
   def self.search_params(gem)
     filters = { :package => package_name(gem) }
