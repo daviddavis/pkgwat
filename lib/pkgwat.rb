@@ -46,35 +46,33 @@ module Pkgwat
   def self.package_name(gem)
     PACKAGE_NAME.gsub(":gem", gem)
   end
-  
-  #this function queries and returns the specified number of packages starting at the specified row
-  def self.get_packages(pattern, start=0, num=nil) 
-    if num == nil
-      num = total_rows(pattern, "packages", PACKAGES_URL_LIST)
-    end
+
+  # this function queries and returns the specified number of packages starting
+  # at the specified row
+  def self.get_packages(pattern, start=0, num=nil)
+    num ||= total_rows(pattern, "packages", PACKAGES_URL_LIST)
     query = {"filters"=>{"search"=>pattern}, "rows_per_page"=>num, "start_row"=>start}
     url = PACKAGES_URL_LIST + "/" + query.to_json
-    uri = URI.parse(URI.escape(url)) 
+    uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
     clean_response = Sanitize.clean(response.body)
-    parse_results(clean_response)    
-  end 
- 
-  #this function just queries for and returns a single package  
+    parse_results(clean_response)
+  end
+
+  # this function just queries for and returns a single package
   def self.get_package(pattern)
     get_packages(pattern, 0, 1).first
   end 
 
-  #this function queries for and returns a list of then open BUGS  
+  #this function queries for and returns a list of then open BUGS
   def self.get_bugs(pattern, version='all', num=nil, start =0)
     if BUGZILLA_RELEASEA[0][version].nil?
       version = BUGZILLA_RELEASEA[0]['all']
     else
       version = BUGZILLA_RELEASEA[0][version]
-    end 
-    if num == nil
-      num = total_rows(pattern, "bugs", BUGS_URL)
     end
+    num ||= total_rows(pattern, "bugs", BUGS_URL)
+
     query = {"filters"=> {"package"=> pattern, "version"=> version}, "rows_per_page"=> num, "start_row"=> start}
     url = BUGS_URL + "/" + query.to_json
     uri = URI.parse(URI.escape(url)) 
@@ -89,16 +87,14 @@ module Pkgwat
     else
       state = KOJI_BUILD_STATES[0][state]
     end
-    if num == nil
-      num = total_rows(pattern, "builds", BUILDS_URL)
-    end
+    num ||= total_rows(pattern, "builds", BUILDS_URL)
     query = {"rows_per_page"=> num, "start_row"=> start, "filters"=> {"state"=> state, "package"=> pattern}}
     url = BUILDS_URL + "/" + query.to_json
-    uri = URI.parse(URI.escape(url)) 
+    uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
-    parse_results(response.body)  
+    parse_results(response.body)
   end
-  
+
   def self.search_params(gem)
     filters = { :package => package_name(gem) }
     { :filters => filters }
@@ -122,7 +118,7 @@ module Pkgwat
     results = JSON.parse(results)
     results["rows"]
   end
-  
+
   private
 
   def self.total_rows(pattern, type, type_url)
@@ -136,7 +132,7 @@ module Pkgwat
     url = type_url + "/" + query.to_json
     uri = URI.parse(URI.escape(url)) 
     response = submit_request(uri)
-    JSON.parse(response.body)["total_rows"]            
+    JSON.parse(response.body)["total_rows"]
   end
-  
+
 end
