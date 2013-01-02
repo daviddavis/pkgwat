@@ -30,5 +30,10 @@ Pkgwat.get_versions("rails")
 Pkgwat.check_gem("pry", "0.9.10", [Pkgwat::F16])
 ```
 
-We also plan to add some rake tasks so you can check that your bundler gems are
-available in Fedora/EPEL repos either locally or as part of a test suite.
+### Rake Tasks
+
+To check your gems in bundler against Fedora repos, run:
+
+```bash
+rake pkgwat:check
+```
