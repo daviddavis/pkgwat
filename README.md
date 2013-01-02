@@ -11,7 +11,7 @@ Installing pkgwat
 -----------------
 
 ```bash
-gem isntall pkgwat
+gem install pkgwat
 ```
 
 Alternatively, if you're using a Gemfile, just add this:
@@ -22,6 +22,8 @@ gem 'pkgwat'
 
 Using pkgwat
 ------------
+
+Inside your code, simply require rubygems and pkgwat. Then you use it like so:
 
 ```ruby
 Pkgwat.get_versions("rails")
