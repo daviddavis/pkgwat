@@ -17,6 +17,8 @@ module Pkgwat
   PACKAGES_URL_LIST = "https://apps.fedoraproject.org/packages/fcomm_connector/xapian/query/search_packages"
   BUGS_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bugzilla/query/query_bugs"
   BUILDS_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/koji/query/query_builds"
+  CHANGELOG_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/koji/query/query_changelogs"
+  CONTENT_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/yum/get_file_tree"
   KOJI_BUILD_STATES = ["all" => "", "f17" =>"17", "f16" => "16", "f15" => "15", "e16" => "16", "e15" => "15"]
   BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
 
@@ -93,6 +95,23 @@ module Pkgwat
     uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
     parse_results(response.body)
+  end
+
+  def self.get_changelog(pattern, num=nil, start=0)
+    num ||= total_rows(pattern, "builds", BUILDS_URL)
+    build_id = get_builds(pattern)[0]['build_id']
+    query = {"filters"=> {"build_id"=> build_id}, "rows_per_page"=> num, "start_row"=> start}
+    url = CHANGELOG_URL + "/" + query.to_json
+    uri = URI.parse(URI.escape(url))
+    response = submit_request(uri)
+    parse_results(response.body)
+  end
+
+  def self.get_contents(pattern, arch='x86_64', release='Rawhide')
+    url = CONTENT_URL + "?package=#{pattern}&arch=#{arch}&repo=#{release}"
+    uri = URI.parse(URI.escape(url))
+    response = submit_request(uri)
+    JSON.parse(response.body)
   end
 
   def self.search_params(gem)
