@@ -19,8 +19,10 @@ module Pkgwat
   BUILDS_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/koji/query/query_builds"
   CHANGELOG_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/koji/query/query_changelogs"
   CONTENT_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/yum/get_file_tree"
+  UPDATES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_updates"
   KOJI_BUILD_STATES = ["all" => "", "f17" =>"17", "f16" => "16", "f15" => "15", "e16" => "16", "e15" => "15"]
   BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
+  BODHI_REALEASE = ["all", "f17", "f16", "f15", "e16", "e15"]
 
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
     puts "Checking #{name} #{version}...\n"
@@ -114,6 +116,36 @@ module Pkgwat
     JSON.parse(response.body)
   end
 
+  def self.get_releases(pattern, num=nil, start=0)
+    num ||= total_rows(pattern, "releases", PACKAGES_URL)
+    query = {"filters"=> {"package"=> pattern}, "rows_per_page"=> num, "start_row"=> start}
+    url = PACKAGES_URL + "/" + query.to_json
+    uri = URI.parse(URI.escape(url))
+    response = submit_request(uri)
+    parse_results(response.body)
+  end
+
+  def self.get_updates(pattern, status, release, num=nil, start=0)
+    num ||= total_rows(pattern, "updates", UPDATES_URL)
+    if !BODHI_REALEASE.include? status
+      return "Invalid bodhi state."
+    end
+    if !BODHI_REALEASE.include? release
+      return "Invalid bodhi release."
+    end
+    if status == "all"
+      status = ""
+    end
+    if release == "all"
+      release = ""
+    end
+    query = {"rows_per_page"=> num, "start_row"=> start, "filters"=> {"package"=> pattern, "release" => release, "state"=> status}}
+    url = PACKAGES_URL + "/" + query.to_json
+    uri = URI.parse(URI.escape(url))
+    response = submit_request(uri)
+    parse_results(response.body)
+  end
+
   def self.search_params(gem)
     filters = { :package => package_name(gem) }
     { :filters => filters }
@@ -147,6 +179,10 @@ module Pkgwat
       query = {"rows_per_page"=> 10, "start_row"=> 0, "filters"=> {"state"=> "", "package"=> pattern}}
     elsif type == "bugs"
       query = {"filters"=> {"package"=> pattern, "version"=> ""}, "rows_per_page"=> 10, "start_row"=> 0}
+    elsif type == "releases"
+      query = {"filters"=> {"package"=> pattern}, "rows_per_page"=> 10, "start_row"=> 0}
+    elsif type == "updates"
+      query = {"rows_per_page"=> 10, "start_row"=> 0, "filters"=> {"package"=> pattern, "release" => "all", "state"=> "all"}}
     end
     url = type_url + "/" + query.to_json
     uri = URI.parse(URI.escape(url)) 
