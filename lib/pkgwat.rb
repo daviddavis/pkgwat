@@ -127,10 +127,10 @@ module Pkgwat
 
   def self.get_updates(pattern, status, release, num=nil, start=0)
     num ||= total_rows(pattern, "updates", UPDATES_URL)
-    if !BODHI_REALEASE.include! status
+    if !BODHI_REALEASE.include? status
       return "Invalid bodhi state."
     end
-    if !BODHI_REALEASE.include! release
+    if !BODHI_REALEASE.include? release
       return "Invalid bodhi release."
     end
     if status == "all"
