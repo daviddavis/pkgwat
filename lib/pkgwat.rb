@@ -23,6 +23,7 @@ module Pkgwat
   KOJI_BUILD_STATES = ["all" => "", "f17" =>"17", "f16" => "16", "f15" => "15", "e16" => "16", "e15" => "15"]
   BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
   BODHI_REALEASE = ["all", "f17", "f16", "f15", "e16", "e15"]
+  BODHI_ARCH = ["x86_64", "i686"]
 
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
     puts "Checking #{name} #{version}...\n"
@@ -110,6 +111,12 @@ module Pkgwat
   end
 
   def self.get_contents(pattern, arch='x86_64', release='Rawhide')
+    if !BODHI_ARCH.include? arch
+      return "Invalid yum arch."
+    end
+    if !BODHI_REALEASE.include? release
+      return "Invalid bodhi release."
+    end
     url = CONTENT_URL + "?package=#{pattern}&arch=#{arch}&repo=#{release}"
     uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
