@@ -24,6 +24,7 @@ module Pkgwat
   BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
   BODHI_REALEASE = ["all", "f17", "f16", "f15", "e16", "e15"]
   BODHI_ARCH = ["x86_64", "i686"]
+
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
     puts "Checking #{name} #{version}...\n"
     versions = get_versions(name)
