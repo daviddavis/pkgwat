@@ -1,4 +1,4 @@
-pkgwat
+pkgwat [![Build Status](https://travis-ci.org/daviddavis/pkgwat.png)](http://travis-ci.org/daviddavis/pkgwat)
 ======
 
 Pkgwat is a gem for querying gem versions from RPM repos. It's based off of
