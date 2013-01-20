@@ -25,8 +25,12 @@ module Pkgwat
   BODHI_REALEASE = ["all", "f17", "f16", "f15", "e16", "e15"]
   BODHI_ARCH = ["x86_64", "i686"]
 
+  class << self
+    attr_accessor :debug
+  end
+
   def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
-    puts "Checking #{name} #{version}...\n"
+    puts "Checking #{name} #{version}...\n" if self.debug
     versions = get_versions(name)
     matches = []
     distros.each do |distro|
@@ -34,7 +38,9 @@ module Pkgwat
       match = compare_versions(version, dv["stable_version"])
       matches << dv["release"] if match
     end
-    puts "#{name} is available in the following distros: #{matches.join(",")}"
+    puts "#{name} is available in the following distros: #{matches.join(",")}" if self.debug
+
+    matches.any?
   end
 
   def self.compare_versions(version, distro)
