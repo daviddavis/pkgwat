@@ -39,3 +39,30 @@ To check your gems in bundler against Fedora repos, run:
 ```bash
 rake pkgwat:check
 ```
+
+Developing pkgwat
+-----------------
+
+### Requirements
+
+* ruby 1.9.3
+* rubygems
+* bundler (`gem install bundler`)
+
+### Getting started
+
+To develop pkgwat, check out the git repo and bundle:
+
+```bash
+git clone git@github.com:daviddavis/pkgwat.git pkgwat
+cd pkgwat # accept the rvmrc file
+bundle install # run bundler
+```
+
+Then just fire up irb:
+
+```
+irb -Ilib -rpkgwat
+>> Pkgwat::F16
+=> "Fedora 16"
+```
