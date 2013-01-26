@@ -1,4 +1,4 @@
-pkgwat
+pkgwat [![Build Status](https://travis-ci.org/daviddavis/pkgwat.png)](http://travis-ci.org/daviddavis/pkgwat)
 ======
 
 Pkgwat is a gem for querying gem versions from RPM repos. It's based off of
@@ -46,6 +46,7 @@ Developing pkgwat
 ### Requirements
 
 * ruby 1.9.3
+* rvm (optional but recommended)
 * rubygems
 * bundler (`gem install bundler`)
 
@@ -65,4 +66,24 @@ Then just fire up irb:
 irb -Ilib -rpkgwat
 >> Pkgwat::F16
 => "Fedora 16"
+```
+
+### Testing
+
+To run the pkgwat test suite execute via rake:
+
+```bash
+rake test
+```
+
+Also you can run an individual test:
+
+```bash
+ruby -Itest test/pkgwat_test.rb
+```
+
+To record your interactions via VCR and use the actual web APIs:
+
+```bash
+rake test mode=all
 ```
