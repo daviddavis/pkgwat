@@ -2,6 +2,7 @@ require "pkgwat/version"
 require 'net/https'
 require 'json'
 require 'sanitize'
+require 'pkgwat/api'
 
 module Pkgwat
   require 'pkgwat/railtie' if defined?(Rails)
@@ -157,6 +158,13 @@ module Pkgwat
     uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
     parse_results(response.body)
+  end
+
+  def get_requirements(gem, version, repo)
+    api = Pkgwat::Api.new
+
+    results = api.gem_requirements(gem, version, repo)
+    parse_results(results)
   end
 
   def self.search_params(gem)

@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency("thor")
   s.add_dependency("json", "1.6.5")
   s.add_dependency("sanitize")
+  s.add_dependency("httparty", "0.8.1")
 
   s.add_development_dependency("vcr", "~> 2.4.0")
   s.add_development_dependency("webmock", "~> 1.9.0")
