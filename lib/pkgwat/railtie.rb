@@ -1,6 +1,6 @@
 require 'pkgwat'
 require 'rails'
-module MyPlugin
+module Pkgwat
   class Railtie < Rails::Railtie
     railtie_name :pkgwat
   end
