@@ -12,6 +12,7 @@ module Pkgwat
   F18 = "Fedora 18"
   EPEL6 = "Fedora EPEL 6"
   EPEL5 = "Fedora EPEL 5"
+  RAWHIDE = "Rawhide"
   DEFAULT_DISTROS = [F17, F16, EPEL6]
   PACKAGE_NAME = "rubygem-:gem"
   PACKAGES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases"
@@ -117,7 +118,7 @@ module Pkgwat
     parse_results(response.body)
   end
 
-  def self.get_contents(pattern, arch='x86_64', release='Rawhide')
+  def self.get_contents(pattern, arch='x86_64', release=Pkgwat::RAWHIDE)
     if !BODHI_ARCH.include? arch
       return "Invalid yum arch."
     end
@@ -160,7 +161,7 @@ module Pkgwat
     parse_results(response.body)
   end
 
-  def get_requirements(gem, version, repo)
+  def self.get_requirements(gem, version, repo)
     api = Pkgwat::Api.new
 
     results = api.gem_requirements(gem, version, repo)

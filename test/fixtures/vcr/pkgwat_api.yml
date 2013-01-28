@@ -1,0 +1,402 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/yum/query/query_requires/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22,%22version%22:%223.0.11%22,%22repo%22:%22Fedora%2017%22,%22arch%22:%22noarch%22%7D,%22rows_per_page%22:1000,%22start_row%22:0%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:06:05 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '1894'
+      Apptime:
+      - D=5244448
+      Appserver:
+      - packages02.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=utf-8
+      Set-Cookie:
+      - fedoracommunity=d006da7e56547a19f777b40af7d2ea8cb8624ffe410ffafe348121c1d5c17e98e451de3f;
+        Path=/
+      Proxytime:
+      - D=5367798
+      Proxyserver:
+      - proxy04.fedoraproject.org
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "\n<html>\n<title>Oops!</title>\n<body id=\"error-page\">\n<head>\r\n<script
+        type=\"text/javascript\" src=\"/packages/_res/tw2.jquery/static/jquery/1.7.1/jquery.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/moksha.wsgi.widgets.moksha_js/static/moksha.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/fedoracommunity.connectors.widgets.widgets/static/js/fcomm.js\"
+        ></script>\n<style type=\"text/css\">\n  \n#geiger {\n  position: relative;\n
+        \ width: 128px;\n  margin-left: auto;\n  margin-right: auto;\n  z-index: 1000;\n}\n\n#geiger
+        #error-code {\n  font-size: 28px;\n  border: 1px solid blue;\n  text-align:
+        center;\n  margin-top: -52px;\n  font-family: Comfortaa, sans-serif;\n  color:
+        #cfe736;\n  letter-spacing: 10px;\n  margin-left: 10px;\n  margin-bottom:
+        0px;\n}\n\nbody, h1, h2, h3 {\n  font-family: Comfortaa, sans-serif;\n  text-transform:
+        uppercase;\n  text-align: center;\n}\n\n#panda {\n  position: relative;\n
+        \ z-index: 0;\n  top: -50px;\n  left: 20px;\n}\n\n#hotdog {\n  position: relative;\n
+        \ z-index: 3;\n  left: 80px;\n  top: -100px;\n}\n\nh2 { \n color: white;\n
+        text-shadow: 1px 1px 0px #db3279;\n font-size: 30px;\n margin-bottom: 0px;\n}
+        \ \n\nh3 {\n color: #db3279;\n margin-top: 2px;\n}\n\na {\n text-decoration:
+        none;\n}\n\nbody {\n  background: black;\n}\n</style>\n</head>\n<h2>Oops,
+        something went wrong!</h2>\n<a href=\"javascript:history.go(-1)\"><h3>Click
+        the panda to go back.</h3></a>\n\n<div id=\"geiger\">\n<img src=\"/packages/images/geiger.png\"/>\n<h3
+        id=\"error-code\">500</h3>\n</div>\n\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"hotdog\" src=\"/packages/images/laser.png\"/></a>\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"panda\" src=\"/packages/images/panda-wee.png\"/></a>\n<br/>\n<script>\n\t\t$(document).ready(function()
+        {\n\t\t\tfor (var i=0; i < 20; i++) {\n\t\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t\t\t$(\"img#panda\").fadeOut(4500);\n\t\t\t}\n\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t});
+        // end doc ready\n</script>\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:06:11 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/yum/query/query_requires/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22,%22version%22:%223.0.11-fc17%22,%22repo%22:%22Fedora%2017%22,%22arch%22:%22noarch%22%7D,%22rows_per_page%22:1000,%22start_row%22:0%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:07:21 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '1894'
+      Apptime:
+      - D=1744584
+      Appserver:
+      - packages01.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=utf-8
+      Set-Cookie:
+      - fedoracommunity=8120d1957c5a5d23ebf8e5a006c82338de76347388c4377868cf6e8f401f6b8fb80b58a6;
+        Path=/
+      Proxytime:
+      - D=1790798
+      Proxyserver:
+      - proxy08.fedoraproject.org
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "\n<html>\n<title>Oops!</title>\n<body id=\"error-page\">\n<head>\r\n<script
+        type=\"text/javascript\" src=\"/packages/_res/tw2.jquery/static/jquery/1.7.1/jquery.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/moksha.wsgi.widgets.moksha_js/static/moksha.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/fedoracommunity.connectors.widgets.widgets/static/js/fcomm.js\"
+        ></script>\n<style type=\"text/css\">\n  \n#geiger {\n  position: relative;\n
+        \ width: 128px;\n  margin-left: auto;\n  margin-right: auto;\n  z-index: 1000;\n}\n\n#geiger
+        #error-code {\n  font-size: 28px;\n  border: 1px solid blue;\n  text-align:
+        center;\n  margin-top: -52px;\n  font-family: Comfortaa, sans-serif;\n  color:
+        #cfe736;\n  letter-spacing: 10px;\n  margin-left: 10px;\n  margin-bottom:
+        0px;\n}\n\nbody, h1, h2, h3 {\n  font-family: Comfortaa, sans-serif;\n  text-transform:
+        uppercase;\n  text-align: center;\n}\n\n#panda {\n  position: relative;\n
+        \ z-index: 0;\n  top: -50px;\n  left: 20px;\n}\n\n#hotdog {\n  position: relative;\n
+        \ z-index: 3;\n  left: 80px;\n  top: -100px;\n}\n\nh2 { \n color: white;\n
+        text-shadow: 1px 1px 0px #db3279;\n font-size: 30px;\n margin-bottom: 0px;\n}
+        \ \n\nh3 {\n color: #db3279;\n margin-top: 2px;\n}\n\na {\n text-decoration:
+        none;\n}\n\nbody {\n  background: black;\n}\n</style>\n</head>\n<h2>Oops,
+        something went wrong!</h2>\n<a href=\"javascript:history.go(-1)\"><h3>Click
+        the panda to go back.</h3></a>\n\n<div id=\"geiger\">\n<img src=\"/packages/images/geiger.png\"/>\n<h3
+        id=\"error-code\">500</h3>\n</div>\n\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"hotdog\" src=\"/packages/images/laser.png\"/></a>\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"panda\" src=\"/packages/images/panda-wee.png\"/></a>\n<br/>\n<script>\n\t\t$(document).ready(function()
+        {\n\t\t\tfor (var i=0; i < 20; i++) {\n\t\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t\t\t$(\"img#panda\").fadeOut(4500);\n\t\t\t}\n\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t});
+        // end doc ready\n</script>\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:07:23 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/yum/query/query_requires/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22,%22version%22:%223.0.11-fc17%22,%22repo%22:%22Rawhide%22,%22arch%22:%22noarch%22%7D,%22rows_per_page%22:1000,%22start_row%22:0%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:08:59 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '1060'
+      Apptime:
+      - D=83675
+      Appserver:
+      - packages02.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=150145
+      Proxyserver:
+      - proxy03.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"rows":[{"name":"rubygem(railties)","provided_by":["rubygem-railties"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"rubygem(bundler)","provided_by":["rubygem-bundler"],"ops":">=","flags":"GE","version":"0-1.0"},{"name":"rubygem(activesupport)","provided_by":["rubygem-activesupport"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"rubygem(activeresource)","provided_by":["rubygem-activeresource"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"rubygem(activerecord)","provided_by":["rubygem-activerecord"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"rubygem(actionpack)","provided_by":["rubygem-actionpack"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"rubygem(actionmailer)","provided_by":["rubygem-actionmailer"],"ops":"=","flags":"EQ","version":"0-3.2.11"},{"name":"ruby(rubygems)","provided_by":["rubygems"],"ops":">=","flags":"GE","version":"0-1.3.4"},{"name":"ruby(abi)","provided_by":["ruby-libs"],"ops":"=","flags":"EQ","version":"0-1.9.1"}],"visible_rows":9,"rows_per_page":1000,"start_row":0,"total_rows":9}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:09:00 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/yum/query/query_requires/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22,%22version%22:%223.0.10%22,%22repo%22:%22Fedora%2016%22,%22arch%22:%22noarch%22%7D,%22rows_per_page%22:1000,%22start_row%22:0%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:20:14 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1894'
+      Apptime:
+      - D=875065
+      Appserver:
+      - packages01.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=utf-8
+      Set-Cookie:
+      - fedoracommunity=bfbb3187c03254add3feb2e01f32821fe9785ec1f18e8a9483d60a79221de045cab8e341;
+        Path=/
+      Proxytime:
+      - D=965278
+      Proxyserver:
+      - proxy06.fedoraproject.org
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "\n<html>\n<title>Oops!</title>\n<body id=\"error-page\">\n<head>\r\n<script
+        type=\"text/javascript\" src=\"/packages/_res/tw2.jquery/static/jquery/1.7.1/jquery.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/moksha.wsgi.widgets.moksha_js/static/moksha.js\"
+        ></script>\n\r\n<script type=\"text/javascript\" src=\"/packages/_res/fedoracommunity.connectors.widgets.widgets/static/js/fcomm.js\"
+        ></script>\n<style type=\"text/css\">\n  \n#geiger {\n  position: relative;\n
+        \ width: 128px;\n  margin-left: auto;\n  margin-right: auto;\n  z-index: 1000;\n}\n\n#geiger
+        #error-code {\n  font-size: 28px;\n  border: 1px solid blue;\n  text-align:
+        center;\n  margin-top: -52px;\n  font-family: Comfortaa, sans-serif;\n  color:
+        #cfe736;\n  letter-spacing: 10px;\n  margin-left: 10px;\n  margin-bottom:
+        0px;\n}\n\nbody, h1, h2, h3 {\n  font-family: Comfortaa, sans-serif;\n  text-transform:
+        uppercase;\n  text-align: center;\n}\n\n#panda {\n  position: relative;\n
+        \ z-index: 0;\n  top: -50px;\n  left: 20px;\n}\n\n#hotdog {\n  position: relative;\n
+        \ z-index: 3;\n  left: 80px;\n  top: -100px;\n}\n\nh2 { \n color: white;\n
+        text-shadow: 1px 1px 0px #db3279;\n font-size: 30px;\n margin-bottom: 0px;\n}
+        \ \n\nh3 {\n color: #db3279;\n margin-top: 2px;\n}\n\na {\n text-decoration:
+        none;\n}\n\nbody {\n  background: black;\n}\n</style>\n</head>\n<h2>Oops,
+        something went wrong!</h2>\n<a href=\"javascript:history.go(-1)\"><h3>Click
+        the panda to go back.</h3></a>\n\n<div id=\"geiger\">\n<img src=\"/packages/images/geiger.png\"/>\n<h3
+        id=\"error-code\">500</h3>\n</div>\n\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"hotdog\" src=\"/packages/images/laser.png\"/></a>\n<a href=\"javascript:history.go(-1)\"><img
+        id=\"panda\" src=\"/packages/images/panda-wee.png\"/></a>\n<br/>\n<script>\n\t\t$(document).ready(function()
+        {\n\t\t\tfor (var i=0; i < 20; i++) {\n\t\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t\t\t$(\"img#panda\").fadeOut(4500);\n\t\t\t}\n\t\t\t$(\"img#panda\").fadeIn(4500);\n\t\t});
+        // end doc ready\n</script>\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:20:16 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:20:51 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '561'
+      Apptime:
+      - D=6505
+      Appserver:
+      - packages01.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=96726
+      Proxyserver:
+      - proxy06.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"start_row":0,"visible_rows":6,"total_rows":6,"rows_per_page":10,"rows":[{"stable_version":"3.2.11-1.fc19","release":"Rawhide","testing_version":"None"},{"stable_version":"3.2.8-1.fc18","release":"Fedora
+        18","testing_version":"None"},{"stable_version":"3.0.11-1.fc17","release":"Fedora
+        17","testing_version":"None"},{"stable_version":"3.0.10-1.fc16","release":"Fedora
+        16","testing_version":"None"},{"stable_version":"None","release":"Fedora EPEL
+        6","testing_version":"None"},{"stable_version":"2.1.1-2.el5","release":"Fedora
+        EPEL 5","testing_version":"None"}]}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:20:52 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:20:51 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '561'
+      Apptime:
+      - D=4318
+      Appserver:
+      - packages01.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=69370
+      Proxyserver:
+      - proxy03.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"rows":[{"release":"Rawhide","stable_version":"3.2.11-1.fc19","testing_version":"None"},{"release":"Fedora
+        18","stable_version":"3.2.8-1.fc18","testing_version":"None"},{"release":"Fedora
+        17","stable_version":"3.0.11-1.fc17","testing_version":"None"},{"release":"Fedora
+        16","stable_version":"3.0.10-1.fc16","testing_version":"None"},{"release":"Fedora
+        EPEL 6","stable_version":"None","testing_version":"None"},{"release":"Fedora
+        EPEL 5","stable_version":"2.1.1-2.el5","testing_version":"None"}],"start_row":0,"rows_per_page":10,"total_rows":6,"visible_rows":6}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:20:52 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-this-gem-doesnt-exist%22%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:20:51 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '519'
+      Apptime:
+      - D=4842
+      Appserver:
+      - packages02.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=71078
+      Proxyserver:
+      - proxy03.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"total_rows":6,"rows_per_page":10,"start_row":0,"visible_rows":6,"rows":[{"testing_version":"None","stable_version":"None","release":"Rawhide"},{"testing_version":"None","stable_version":"None","release":"Fedora
+        18"},{"testing_version":"None","stable_version":"None","release":"Fedora 17"},{"testing_version":"None","stable_version":"None","release":"Fedora
+        16"},{"testing_version":"None","stable_version":"None","release":"Fedora EPEL
+        6"},{"testing_version":"None","stable_version":"None","release":"Fedora EPEL
+        5"}]}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:20:52 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/yum/query/query_requires/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22,%22version%22:%223.0.11%22,%22repo%22:%22Rawhide%22,%22arch%22:%22noarch%22%7D,%22rows_per_page%22:1000,%22start_row%22:0%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 28 Jan 2013 23:20:52 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '1060'
+      Apptime:
+      - D=1571950
+      Appserver:
+      - packages01.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=1637693
+      Proxyserver:
+      - proxy03.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"total_rows":9,"start_row":0,"visible_rows":9,"rows_per_page":1000,"rows":[{"flags":"EQ","name":"rubygem(railties)","ops":"=","provided_by":["rubygem-railties"],"version":"0-3.2.11"},{"flags":"GE","name":"rubygem(bundler)","ops":">=","provided_by":["rubygem-bundler"],"version":"0-1.0"},{"flags":"EQ","name":"rubygem(activesupport)","ops":"=","provided_by":["rubygem-activesupport"],"version":"0-3.2.11"},{"flags":"EQ","name":"rubygem(activeresource)","ops":"=","provided_by":["rubygem-activeresource"],"version":"0-3.2.11"},{"flags":"EQ","name":"rubygem(activerecord)","ops":"=","provided_by":["rubygem-activerecord"],"version":"0-3.2.11"},{"flags":"EQ","name":"rubygem(actionpack)","ops":"=","provided_by":["rubygem-actionpack"],"version":"0-3.2.11"},{"flags":"EQ","name":"rubygem(actionmailer)","ops":"=","provided_by":["rubygem-actionmailer"],"version":"0-3.2.11"},{"flags":"GE","name":"ruby(rubygems)","ops":">=","provided_by":["rubygems"],"version":"0-1.3.4"},{"flags":"EQ","name":"ruby(abi)","ops":"=","provided_by":["ruby-libs"],"version":"0-1.9.1"}]}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2013 23:20:54 GMT
+recorded_with: VCR 2.4.0
