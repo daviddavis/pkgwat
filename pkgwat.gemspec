@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "pkgwat"
 
-  s.add_dependency("nokogiri", "= 1.5.5")
+  s.add_dependency("nokogiri", "1.6.0")
   s.add_dependency("rake")
   s.add_dependency("thor")
-  s.add_dependency("json", "1.6.5")
+  s.add_dependency("json", "1.8.0")
   s.add_dependency("sanitize")
 
   s.add_development_dependency("vcr", "~> 2.4.0")
