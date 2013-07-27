@@ -29,7 +29,7 @@ Inside your code, simply require rubygems and pkgwat. Then you use it like so:
 Pkgwat.get_versions("rails")
 
 # this will return true or false if the package exists
-Pkgwat.check_gem("pry", "0.9.10", [Pkgwat::F16])
+Pkgwat.check_gem("pry", "0.9.10", ["Fedora EPEL 6", "Fedora 19", "Rawhide"])
 ```
 
 ### Rake Tasks
@@ -64,8 +64,8 @@ Then just fire up irb:
 
 ```
 irb -Ilib -rpkgwat
->> Pkgwat::F16
-=> "Fedora 16"
+>> Pkgwat.get_versions("runcible")
+=> [{"release"=>"Rawhide", ...
 ```
 
 ### Testing

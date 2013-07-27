@@ -6,12 +6,6 @@ require 'sanitize'
 module Pkgwat
   require 'pkgwat/railtie' if defined?(Rails)
 
-  F17 = "Fedora 17"
-  F16 = "Fedora 16"
-  F18 = "Fedora 18"
-  EPEL6 = "Fedora EPEL 6"
-  EPEL5 = "Fedora EPEL 5"
-  DEFAULT_DISTROS = [F17, F16, EPEL6]
   PACKAGE_NAME = "rubygem-:gem"
   PACKAGES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases"
   PACKAGES_URL_LIST = "https://apps.fedoraproject.org/packages/fcomm_connector/xapian/query/search_packages"
@@ -20,16 +14,16 @@ module Pkgwat
   CHANGELOG_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/koji/query/query_changelogs"
   CONTENT_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/yum/get_file_tree"
   UPDATES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_updates"
-  KOJI_BUILD_STATES = ["all" => "", "f17" =>"17", "f16" => "16", "f15" => "15", "e16" => "16", "e15" => "15"]
+  KOJI_BUILD_STATES = ["all" => "", "f19" =>"19", "f18" => "18", "f20" => "20", "e16" => "16", "e15" => "15"]
   BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
-  BODHI_REALEASE = ["all", "f17", "f16", "f15", "e16", "e15"]
+  BODHI_REALEASE = ["all", "f19", "f18", "f20", "e16", "e15"]
   BODHI_ARCH = ["x86_64", "i686"]
 
   class << self
     attr_accessor :debug
   end
 
-  def self.check_gem(name, version, distros = DEFAULT_DISTROS, throw_ex = false)
+  def self.check_gem(name, version, distros, throw_ex = false)
     puts "Checking #{name} #{version}...\n" if self.debug
     versions = get_versions(name)
     matches = []
@@ -40,7 +34,7 @@ module Pkgwat
     end
     puts "#{name} is available in the following distros: #{matches.join(",")}" if self.debug
 
-    matches.any?
+    matches.any? ? matches : false
   end
 
   def self.compare_versions(version, distro)
