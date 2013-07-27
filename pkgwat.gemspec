@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Pkgwat::VERSION
   s.authors     = ["David Davis"]
   s.email       = ["daviddavis@redhat.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/daviddavis/pkgwat"
   s.summary     = %q{pkgwat checks your gems to against Fedora/EPEL.}
   s.description = %q{pkgwat checks your Gemfile.lock to make sure all your gems
                      are packaged in Fedora/EPEL. Eventually we hope to support
