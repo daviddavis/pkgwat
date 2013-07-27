@@ -24,21 +24,24 @@ module Pkgwat
   end
 
   def self.check_gem(name, version, distros, throw_ex = false)
-    puts "Checking #{name} #{version}...\n" if self.debug
     versions = get_versions(name)
-    matches = []
-    distros.each do |distro|
-      dv = versions.detect { |v| v["release"] == distro }
-      match = compare_versions(version, dv["stable_version"])
-      matches << dv["release"] if match
+    distros = Array(distros) # convert distros to an array if not already
+
+    matches = distros.each_with_object([]) do |distro, results|
+      distro_match = versions.detect { |v| v["release"] == distro }
+      if distro_match
+        distro_version = distro_match["stable_version"][/\A(\S+)-.*\z/, 1] # get the actual gem version
+        match = compare_versions(version, distro_version)
+        results << distro_match["release"] if match
+      end
     end
-    puts "#{name} is available in the following distros: #{matches.join(",")}" if self.debug
 
     matches.any? ? matches : false
   end
 
-  def self.compare_versions(version, distro)
-    distro.to_s.split("-").first == version.to_s
+  def self.compare_versions(version1, version2)
+    return false if version1.nil? || version1.to_s.length < 1 || version2.nil? || version2.to_s.length < 1
+    Gem::Version.new(version1) == Gem::Version.new(version2)
   end
 
   def self.get_versions(gem_name)

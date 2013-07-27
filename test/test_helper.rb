@@ -2,6 +2,7 @@ ENV['RACK_ENV'] = 'test'
 require 'minitest/autorun'
 require 'pkgwat'
 require 'vcr'
+require 'debugger'
 
 mode = ENV['mode'] ? ENV['mode'] : :none
 

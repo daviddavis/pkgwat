@@ -17,78 +17,33 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 20 Jan 2013 17:10:05 GMT
+      - Sat, 27 Jul 2013 16:16:41 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Content-Length:
-      - '577'
+      - '561'
       Apptime:
-      - D=5932
+      - D=4908
       Appserver:
-      - packages02.phx2.fedoraproject.org
+      - packages01.phx2.fedoraproject.org
       Vary:
       - Accept-Encoding
       Content-Type:
       - text/html; charset=UTF-8
       Proxytime:
-      - D=35750
-      Proxyserver:
-      - proxy08.fedoraproject.org
-    body:
-      encoding: US-ASCII
-      string: ! '{"start_row":0,"total_rows":6,"rows":[{"stable_version":"3.2.8-1.fc18","release":"Rawhide","testing_version":"<i>Not
-        Applicable</i>"},{"stable_version":"3.2.8-1.fc18","release":"Fedora 18","testing_version":"None"},{"stable_version":"3.0.11-1.fc17","release":"Fedora
-        17","testing_version":"None"},{"stable_version":"3.0.10-1.fc16","release":"Fedora
-        16","testing_version":"None"},{"stable_version":"None","release":"Fedora EPEL
-        6","testing_version":"None"},{"stable_version":"2.1.1-2.el5","release":"Fedora
-        EPEL 5","testing_version":"None"}],"rows_per_page":10,"visible_rows":6}'
-    http_version: 
-  recorded_at: Sun, 20 Jan 2013 17:10:03 GMT
-- request:
-    method: get
-    uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22%7D%7D
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sun, 20 Jan 2013 17:10:05 GMT
-      Server:
-      - Apache/2.2.15 (Red Hat)
-      Content-Length:
-      - '577'
-      Apptime:
-      - D=6254
-      Appserver:
-      - packages02.phx2.fedoraproject.org
-      Vary:
-      - Accept-Encoding
-      Content-Type:
-      - text/html; charset=UTF-8
-      Proxytime:
-      - D=142563
+      - D=146264
       Proxyserver:
       - proxy04.fedoraproject.org
     body:
       encoding: US-ASCII
-      string: ! '{"visible_rows":6,"total_rows":6,"start_row":0,"rows":[{"stable_version":"3.2.8-1.fc18","testing_version":"<i>Not
-        Applicable</i>","release":"Rawhide"},{"stable_version":"3.2.8-1.fc18","testing_version":"None","release":"Fedora
-        18"},{"stable_version":"3.0.11-1.fc17","testing_version":"None","release":"Fedora
-        17"},{"stable_version":"3.0.10-1.fc16","testing_version":"None","release":"Fedora
-        16"},{"stable_version":"None","testing_version":"None","release":"Fedora EPEL
-        6"},{"stable_version":"2.1.1-2.el5","testing_version":"None","release":"Fedora
-        EPEL 5"}],"rows_per_page":10}'
+      string: ! '{"rows":[{"release":"Rawhide","testing_version":"None","stable_version":"3.2.13-1.fc20"},{"release":"Fedora
+        19","testing_version":"None","stable_version":"3.2.13-1.fc19"},{"release":"Fedora
+        18","testing_version":"None","stable_version":"3.2.8-1.fc18"},{"release":"Fedora
+        17","testing_version":"None","stable_version":"3.0.11-1.fc17"},{"release":"Fedora
+        EPEL 6","testing_version":"None","stable_version":"None"},{"release":"Fedora
+        EPEL 5","testing_version":"None","stable_version":"2.1.1-2.el5"}],"rows_per_page":10,"start_row":0,"visible_rows":6,"total_rows":6}'
     http_version: 
-  recorded_at: Sun, 20 Jan 2013 17:10:04 GMT
+  recorded_at: Sat, 27 Jul 2013 16:16:42 GMT
 - request:
     method: get
     uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-this-gem-doesnt-exist%22%7D%7D
@@ -106,13 +61,56 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 20 Jan 2013 17:10:03 GMT
+      - Sat, 27 Jul 2013 16:16:41 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Content-Length:
-      - '566'
+      - '519'
       Apptime:
-      - D=6904
+      - D=3366
+      Appserver:
+      - packages02.phx2.fedoraproject.org
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=UTF-8
+      Proxytime:
+      - D=144030
+      Proxyserver:
+      - proxy04.fedoraproject.org
+    body:
+      encoding: US-ASCII
+      string: ! '{"rows_per_page":10,"total_rows":6,"start_row":0,"rows":[{"release":"Rawhide","testing_version":"None","stable_version":"None"},{"release":"Fedora
+        19","testing_version":"None","stable_version":"None"},{"release":"Fedora 18","testing_version":"None","stable_version":"None"},{"release":"Fedora
+        17","testing_version":"None","stable_version":"None"},{"release":"Fedora EPEL
+        6","testing_version":"None","stable_version":"None"},{"release":"Fedora EPEL
+        5","testing_version":"None","stable_version":"None"}],"visible_rows":6}'
+    http_version: 
+  recorded_at: Sat, 27 Jul 2013 16:16:42 GMT
+- request:
+    method: get
+    uri: https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_active_releases/%7B%22filters%22:%7B%22package%22:%22rubygem-rails%22%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 27 Jul 2013 16:16:42 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Content-Length:
+      - '561'
+      Apptime:
+      - D=7796
       Appserver:
       - packages01.phx2.fedoraproject.org
       Vary:
@@ -120,17 +118,17 @@ http_interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Proxytime:
-      - D=137898
+      - D=148018
       Proxyserver:
       - proxy04.fedoraproject.org
     body:
       encoding: US-ASCII
-      string: ! '{"total_rows":6,"rows_per_page":10,"start_row":0,"visible_rows":6,"rows":[{"testing_version":"<i>Not
-        Applicable</i>","stable_version":"No builds tagged with dist-5E-epel","release":"Rawhide"},{"testing_version":"None","stable_version":"None","release":"Fedora
-        18"},{"testing_version":"None","stable_version":"None","release":"Fedora 17"},{"testing_version":"None","stable_version":"None","release":"Fedora
-        16"},{"testing_version":"None","stable_version":"None","release":"Fedora EPEL
-        6"},{"testing_version":"None","stable_version":"None","release":"Fedora EPEL
-        5"}]}'
+      string: ! '{"rows":[{"release":"Rawhide","testing_version":"None","stable_version":"3.2.13-1.fc20"},{"release":"Fedora
+        19","testing_version":"None","stable_version":"3.2.13-1.fc19"},{"release":"Fedora
+        18","testing_version":"None","stable_version":"3.2.8-1.fc18"},{"release":"Fedora
+        17","testing_version":"None","stable_version":"3.0.11-1.fc17"},{"release":"Fedora
+        EPEL 6","testing_version":"None","stable_version":"None"},{"release":"Fedora
+        EPEL 5","testing_version":"None","stable_version":"2.1.1-2.el5"}],"start_row":0,"rows_per_page":10,"visible_rows":6,"total_rows":6}'
     http_version: 
-  recorded_at: Sun, 20 Jan 2013 17:10:04 GMT
+  recorded_at: Sat, 27 Jul 2013 16:16:42 GMT
 recorded_with: VCR 2.4.0
