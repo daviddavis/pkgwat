@@ -15,15 +15,15 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "pkgwat"
 
-  s.add_dependency("nokogiri", "1.6.0")
+  s.add_dependency("nokogiri")
   s.add_dependency("rake")
   s.add_dependency("thor")
-  s.add_dependency("json", "1.8.0")
+  s.add_dependency("json")
   s.add_dependency("sanitize")
 
   s.add_development_dependency("vcr", "~> 2.4.0")
   s.add_development_dependency("webmock", "~> 1.9.0")
-  s.add_development_dependency("minitest", "~> 4.4.0")
+  s.add_development_dependency("minitest", "~> 4.0")
   if RUBY_VERSION >= "1.9"
     s.add_development_dependency("debugger")
   else
