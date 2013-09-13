@@ -2,7 +2,12 @@ ENV['RACK_ENV'] = 'test'
 require 'minitest/autorun'
 require 'pkgwat'
 require 'vcr'
-require 'debugger'
+begin
+  require 'debugger'
+rescue LoadError
+  warn "warning: debugger gem not found; skipping debugger support"
+end
+
 
 mode = ENV['mode'] ? ENV['mode'] : :none
 
