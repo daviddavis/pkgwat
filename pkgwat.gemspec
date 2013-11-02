@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency("nokogiri", "~> 1.4")
   s.add_dependency("rake")
-  s.add_dependency("thor")
   s.add_dependency("json", "~> 1.4")
   s.add_dependency("sanitize")
 
