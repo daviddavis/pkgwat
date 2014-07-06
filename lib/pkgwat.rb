@@ -15,8 +15,8 @@ module Pkgwat
   CONTENT_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/yum/get_file_tree"
   UPDATES_URL = "https://apps.fedoraproject.org/packages/fcomm_connector/bodhi/query/query_updates"
   KOJI_BUILD_STATES = ["all" => "", "f19" =>"19", "f18" => "18", "f20" => "20", "e16" => "16", "e15" => "15"]
-  BUGZILLA_RELEASEA = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
-  BODHI_REALEASE = ["all", "f19", "f18", "f20", "e16", "e15"]
+  BUGZILLA_RELEASE = ["all" => "", "building" =>"0", "success" => "1", "failed" => "2", "cancelled" => "3", "deleted" => "4"]
+  BODHI_RELEASE = ["all", "f19", "f18", "f20", "e16", "e15"]
   BODHI_ARCH = ["x86_64", "i686"]
 
   class << self
@@ -70,25 +70,25 @@ module Pkgwat
   # this function just queries for and returns a single package
   def self.get_package(pattern)
     get_packages(pattern, 0, 1).first
-  end 
+  end
 
   #this function queries for and returns a list of then open BUGS
   def self.get_bugs(pattern, version='all', num=nil, start =0)
-    if BUGZILLA_RELEASEA[0][version].nil?
-      version = BUGZILLA_RELEASEA[0]['all']
+    if BUGZILLA_RELEASE[0][version].nil?
+      version = BUGZILLA_RELEASE[0]['all']
     else
-      version = BUGZILLA_RELEASEA[0][version]
+      version = BUGZILLA_RELEASE[0][version]
     end
     num ||= total_rows(pattern, "bugs", BUGS_URL)
 
     query = {"filters"=> {"package"=> pattern, "version"=> version}, "rows_per_page"=> num, "start_row"=> start}
     url = BUGS_URL + "/" + query.to_json
-    uri = URI.parse(URI.escape(url)) 
+    uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
-    parse_results(response.body)  
+    parse_results(response.body)
   end
 
-  #this function queries for and returns a list of the BUILDS 
+  #this function queries for and returns a list of the BUILDS
   def self.get_builds(pattern, state='all', num=nil, start =0)
     if KOJI_BUILD_STATES[0][state].nil?
       state = KOJI_BUILD_STATES[0]['all']
@@ -117,7 +117,7 @@ module Pkgwat
     if !BODHI_ARCH.include? arch
       return "Invalid yum arch."
     end
-    if !BODHI_REALEASE.include? release
+    if !BODHI_RELEASE.include? release
       return "Invalid bodhi release."
     end
     url = CONTENT_URL + "?package=#{pattern}&arch=#{arch}&repo=#{release}"
@@ -137,10 +137,10 @@ module Pkgwat
 
   def self.get_updates(pattern, status, release, num=nil, start=0)
     num ||= total_rows(pattern, "updates", UPDATES_URL)
-    if !BODHI_REALEASE.include? status
+    if !BODHI_RELEASE.include? status
       return "Invalid bodhi state."
     end
-    if !BODHI_REALEASE.include? release
+    if !BODHI_RELEASE.include? release
       return "Invalid bodhi release."
     end
     if status == "all"
@@ -195,7 +195,7 @@ module Pkgwat
       query = {"rows_per_page"=> 10, "start_row"=> 0, "filters"=> {"package"=> pattern, "release" => "all", "state"=> "all"}}
     end
     url = type_url + "/" + query.to_json
-    uri = URI.parse(URI.escape(url)) 
+    uri = URI.parse(URI.escape(url))
     response = submit_request(uri)
     JSON.parse(response.body)["total_rows"]
   end
