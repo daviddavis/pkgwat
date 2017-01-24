@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency("nokogiri", "~> 1.4")
   s.add_dependency("rake")
-  s.add_dependency("json", "~> 1.4")
+  s.add_dependency("json", ">= 1.4")
   s.add_dependency("sanitize")
 
   s.add_development_dependency("vcr", "~> 2.4.0")
