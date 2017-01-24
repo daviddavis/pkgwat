@@ -15,15 +15,17 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "pkgwat"
 
+  s.required_ruby_version = '~> 2.0'
+
   s.add_dependency("nokogiri", "~> 1.4")
   s.add_dependency("rake")
-  s.add_dependency("json", "~> 1.4")
+  s.add_dependency("json", ">= 1.7")
   s.add_dependency("sanitize")
 
   s.add_development_dependency("vcr", "~> 2.4.0")
   s.add_development_dependency("webmock", "~> 1.9.0")
   s.add_development_dependency("minitest", "~> 4.4")
-  s.add_development_dependency("debugger")
+  s.add_development_dependency("byebug")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
