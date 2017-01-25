@@ -1,8 +1,8 @@
 pkgwat [![Build Status](https://travis-ci.org/daviddavis/pkgwat.png)](http://travis-ci.org/daviddavis/pkgwat)
 ======
 
-Pkgwat is a gem for querying gem versions from RPM repos. It's based off of
-[pkgwat.cli](git://github.com/ralphbean/pkgwat.cli.git) and it uses
+Pkgwat is a ruby gem for querying gem versions from RPM repos. It's based off
+of [pkgwat.cli](https://github.com/ralphbean/pkgwat.cli) and it uses
 [apps.fedoraproject.org/packages](https://apps.fedoraproject.org/packages/).
 
 
