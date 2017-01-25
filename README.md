@@ -45,7 +45,7 @@ Developing pkgwat
 
 ### Requirements
 
-* ruby 1.9.3
+* ruby 2.0 (or greater)
 * rvm (optional but recommended)
 * rubygems
 * bundler (`gem install bundler`)
